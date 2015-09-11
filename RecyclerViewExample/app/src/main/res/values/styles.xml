@@ -1,8 +1,28 @@
 <resources>
 
+<<<<<<< Updated upstream
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+=======
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
+        <item name="android:colorPrimary">#7777FF</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="android:colorPrimaryDark">#77FF77</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">#FF0000</item>
+
+        <item name="colorControlHighlight">#fffea50b</item>
+    </style>
+    
+    <style name="floating_action_button">
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+>>>>>>> Stashed changes
     </style>
 
 </resources>
