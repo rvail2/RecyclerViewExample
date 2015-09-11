@@ -2,4 +2,14 @@
     <style name="AppTheme" parent="@style/Theme.AppCompat">
         <item name="colorControlHighlight">#fffea50b</item>
     </style>
+
+    <style name="ContactName">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ContactEmail">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
 </resources>
