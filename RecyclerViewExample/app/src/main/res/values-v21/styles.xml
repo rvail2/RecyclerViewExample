@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.Light">
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat">
+        <item name="android:colorPrimary">#7777FF</item>
+        <item name="android:colorPrimaryDark">#4545CC</item>
+        <item name="android:colorAccent">#FF0000</item>
+        <item name="colorControlHighlight">#fffea50b</item>
+    </style>
+
+    <style name="floating_action_button">
+        <item name="android:layout_margin">16dp</item>
     </style>
 </resources>
