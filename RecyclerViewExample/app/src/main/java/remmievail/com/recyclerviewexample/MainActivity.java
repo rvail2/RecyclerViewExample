@@ -1,17 +1,25 @@
 package remmievail.com.recyclerviewexample;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import remmievail.com.recyclerviewexample.adapters.ContactAdapter;
+import remmievail.com.recyclerviewexample.dialogs.NewContactDialog;
 import remmievail.com.recyclerviewexample.model.Contact;
 
 public class MainActivity extends AppCompatActivity {
+
+    private List<Contact> contacts;
+    private ContactAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +29,24 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        final ContactAdapter adapter = new ContactAdapter(getContacts());
+        final FloatingActionButton newContactButton = (FloatingActionButton) findViewById(R.id.newContactButton);
+        newContactButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NewContactDialog d = new NewContactDialog();
+                d.setOnSaveListener(new NewContactDialog.ContactSaveListener() {
+                    @Override
+                    public void saveContact(Contact contact) {
+                        contacts.add(contact);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                d.show(getFragmentManager(), "dialogfrag");
+            }
+        });
+
+        contacts = getContacts();
+        adapter = new ContactAdapter(contacts);
         recyclerView.setAdapter(adapter);
     }
 
